@@ -93,19 +93,27 @@ namespace Assignment_1_Calculator_for_programing_2
 
                 //the data type cannot be int else it will perform integer division,use double instead
 
-                double a = double.Parse(TextBox_1.Text);
+                int a = int.Parse(TextBox_1.Text);
 
-                double b = double.Parse(TextBox_2.Text);
+                int b = int.Parse(TextBox_2.Text);
 
                 //make a new variable to divide them together
 
-                double sum = a / b;
+                int sum = a / b;
 
-                MessageBox.Show($"{a.ToString()} / {b.ToString()} = {sum.ToString()}");
+                
+                
+                
+                
+                
+             MessageBox.Show($"{a.ToString()} / {b.ToString()} = {sum.ToString()}");
+                
+
+          
             }
-            catch(DivideByZeroException dvz) 
+            catch(DivideByZeroException) 
             { 
-                Console.WriteLine("Division by 0 is not possible");
+                MessageBox.Show("Division by 0 is not possible");
             } 
            
             //in order to get the message box to display a formatted string i simply treated it like a console.Write line and performed string concatanation to display everything together.
