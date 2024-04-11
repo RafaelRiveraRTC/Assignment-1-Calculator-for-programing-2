@@ -85,30 +85,31 @@ namespace Assignment_1_Calculator_for_programing_2
 
         private void divideNumberButton_Click_4(object sender, RoutedEventArgs e)
         {
-            //create your variable for division and parse them using the x name of the textboxes
-
-            //the data type cannot be int else it will perform integer division,use double instead
-
-            double a = int.Parse(TextBox_1.Text);
-
-            double b = int.Parse(TextBox_2.Text);
-
-            //make a new variable to divide them together
-
-            double sum = a / b;
 
             try
             {
-                Console.WriteLine(sum);
+
+                //create your variable for division and parse them using the x name of the textboxes
+
+                //the data type cannot be int else it will perform integer division,use double instead
+
+                double a = double.Parse(TextBox_1.Text);
+
+                double b = double.Parse(TextBox_2.Text);
+
+                //make a new variable to divide them together
+
+                double sum = a / b;
+
+                MessageBox.Show($"{a.ToString()} / {b.ToString()} = {sum.ToString()}");
             }
-            catch(DivideByZeroException) 
+            catch(DivideByZeroException dvz) 
             { 
-                Console.WriteLine("Division of {0} by zero",sum);
+                Console.WriteLine("Division by 0 is not possible");
             } 
            
             //in order to get the message box to display a formatted string i simply treated it like a console.Write line and performed string concatanation to display everything together.
 
-            MessageBox.Show($"{a.ToString()} / {b.ToString()} = {sum.ToString()}");
         }
     }
 }
